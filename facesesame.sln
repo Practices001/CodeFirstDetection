@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "facesesame", "facesesame\facesesame.csproj", "{1F574CB4-E153-40C0-AD6F-D40662BBCCED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F574CB4-E153-40C0-AD6F-D40662BBCCED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F574CB4-E153-40C0-AD6F-D40662BBCCED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F574CB4-E153-40C0-AD6F-D40662BBCCED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F574CB4-E153-40C0-AD6F-D40662BBCCED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1268A3E-182D-450E-8414-A358ACF49FBB}
+	EndGlobalSection
+EndGlobal
