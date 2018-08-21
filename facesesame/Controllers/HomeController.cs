@@ -9,7 +9,7 @@ namespace facesesame.Controllers
 {
     public class HomeController : Controller
     {
-        [AllowAnonymous]
+       
         public ActionResult Index()
         {
             if(User.IsInRole(RoleName.CanAccessAll))
@@ -30,6 +30,14 @@ namespace facesesame.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        
+        public ActionResult Inicio()
+        {
+            if (User.IsInRole(RoleName.CanAccessAll))
+                return View("InicioAdmin");
+            return View("Inicio");
         }
     }
 }

@@ -1,40 +1,46 @@
 ﻿@model facesesame.Models.RegisterViewModel
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Signin";
+    Layout = "~/Views/Shared/_LayoutNormal.cshtml";
 }
+<!DOCTYPE HTML>
+<head>
+    <meta charset="UTF-8">
+    <title>Singin</title>
+    <link href="Estilo.css" rel="stylesheet">
+    @Styles.Render("~/bundles/css")
+</head>
 
-<h2>@ViewBag.Title.</h2>
+<body>
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        <br>
+        @Html.AntiForgeryToken()
+        <br>
+        <br>
+        <div style="margin:auto; text-align: center">
+            <b style="color:white; font-size:x-large;">NUEVO USUARIO</b>
+            <br>
+            @Html.ValidationSummary("", new { @class = "text-succes" })
+            <br>
+            <br>
+            <p style="padding-right: 110px;">E-mail:</p>
+            <p>@Html.TextBoxFor(m => m.Email)</p>
+            <p style="padding-right: 90px;">Contraseña:</p>
+            <p>@Html.PasswordFor(m => m.Password)</p>
+            <p style="padding-right: 25px;">Confirme Contraseña:</p>
+            <p>@Html.PasswordFor(m => m.ConfirmPassword)</p>
+            <br>
+
+            <br>
+            <button type="submit" class="btn btn-warning" value="Register">Registrar</button>
+            <br>
+            <br>
+
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
-}
+    }
+</body>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

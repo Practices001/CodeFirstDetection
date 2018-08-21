@@ -1,43 +1,42 @@
-﻿<!DOCTYPE html>
-<html>
+﻿@using Microsoft.AspNet.Identity;
+<!DOCTYPE html>
+
 <head>
+    <link href="Estilo.css" rel="stylesheet">
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - You're not the Admin!</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <title>@ViewBag.Title - Reconocimiento Facial</title>
+    @Styles.Render("~/bundles/modernizr")
+    @Styles.Render("~/bundles/css")
 
 </head>
+
+
+
+
+
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <b class="navbar-brand" style="color:black;">Reconocimiento Facial</b>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li>@Html.ActionLink("Inicio", "Inicio", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                <li>@Html.ActionLink("Usuario", "HourDetails", "AspNetUsers", new { id = User.Identity.GetUserId() }, new { area = "", @class = "nav-link" })</li>
+                <li>@Html.ActionLink("Reconocimiento", "Index", "Camera", new { area = "" }, new { @class = "nav-link" })</li>
+
+            </ul>
+            @Html.Partial("_LoginPartial")
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - This is the not Admin Layout</p>
-        </footer>
-    </div>
+    </nav>
+
+
+    @RenderBody()
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bootbox/js")
     @RenderSection("scripts", required: false)
 </body>
-</html>
