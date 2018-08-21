@@ -212,12 +212,17 @@
     <Compile Include="Migrations\201808171647037_AddPuestosTable.Designer.cs">
       <DependentUpon>201808171647037_AddPuestosTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808210554074_SeedUsers.cs" />
+    <Compile Include="Migrations\201808210554074_SeedUsers.Designer.cs">
+      <DependentUpon>201808210554074_SeedUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Horario.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Puestos.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -280,6 +285,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_LayoutNormal.cshtml" />
+    <Content Include="Views\Home\NoAdminIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -306,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808171647037_AddPuestosTable.resx">
       <DependentUpon>201808171647037_AddPuestosTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808210554074_SeedUsers.resx">
+      <DependentUpon>201808210554074_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
